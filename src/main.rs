@@ -20,7 +20,7 @@ fn main() {
 
     // ask to guess a number and loop it till they get it right
     loop {
-        println!("Try to guess the number I'm thinking.");
+        println!("Try to guess the number I'm thinking. (It's between 1 and 100.)");
         let mut guess = String::new();
 
         io::stdin()
@@ -30,7 +30,7 @@ fn main() {
         println!("You guessed: {}", guess);
 
         // make variables comparable and compare with matcher
-        let guess: u32 = guess.trim().parse().expect("Please type a number!");
+        let guess: u32 = guess.trim().parse().expect("Please type a number! \n");
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too Low, {}!", name),
